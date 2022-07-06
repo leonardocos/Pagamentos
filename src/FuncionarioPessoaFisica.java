@@ -10,10 +10,10 @@ public class FuncionarioPessoaFisica extends Funcionario {
 
     @Override
     public String toString() {
-        return "FuncionarioPessoaFisica{" +
-                "Nome= " + getNome() + "\n" +
-                "Sobrenome= " + getSobrenome() + "\n" +
-                "valorMes= " + getValorMes() + "\n" +
+        return "FuncionarioPessoaFisica {" +
+                "Nome= " + getNome() +
+                " Sobrenome= " + getSobrenome() +
+                " valorMes= " + getValorMes() +
                 '}';
     }
 
@@ -28,5 +28,14 @@ public class FuncionarioPessoaFisica extends Funcionario {
     @Override
     public double calcularSalario(){
         return valorMes;
+    }
+
+    @Override
+    public Boolean IsFuncionarioChefe() {
+        return false;
+    }
+
+    public void definirEncarregado(Encarregado encarregado){
+        this.setEncarregado(encarregado);
     }
 }

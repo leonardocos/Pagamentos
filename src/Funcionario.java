@@ -61,15 +61,20 @@ abstract class Funcionario implements IChefe {
             }
         }
     }
+
+    // FIltra os registros com o .filter e mostra os encarregados da lista de funcionários.
     public static void mostrarFuncionariosChefeVersaoFuncional() {
         funcionarios.stream() // manipula a lista, cria cópia na memória
                 .filter(f -> f.IsFuncionarioChefe())    //espera condição lógica para filtrar registros
-                .forEach(f -> System.out.println(f.getNome()));
+                .forEach(f -> System.out.println(f.getNome())); //   a cada registro encontrado pelo filter, printa os
+                                                                //   nomes dos encarregados
     }
 
+    // Filtras os registros da lista e checa condição da interface IChefe.
     public static void mostrarNaoEncarregado(){
         funcionarios.stream()
                 .filter(f -> !f.IsFuncionarioChefe())
+                // forEach está mostrando os funcionários e seus encarregados.
                 .forEach(f -> System.out.println(f.getNome() + " - Encarregado: " +f.getEncarregado().getNome()));
     }
 //    public static void mostrarEncarregado(){

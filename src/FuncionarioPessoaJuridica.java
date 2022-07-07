@@ -41,11 +41,16 @@ public class FuncionarioPessoaJuridica extends Funcionario {
         return quantidadeHorasTrabalhadasMes * valorHora;
     }
 
+    // Atribui valor true ou false para a condição da interface.
     @Override
     public Boolean IsFuncionarioChefe() {
         return false;
     }
+
+    // Define o encarregado do funcionário.
     public void definirEncarregado(Encarregado encarregado){
         this.setEncarregado(encarregado);
+        encarregado.adicionarFuncionario(this);
+
     }
 }
